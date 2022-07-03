@@ -1,0 +1,255 @@
+
+
+{
+    "swagger": "2.0",
+    "info": {
+      "title": "Typescript",
+      "description": "Api documention with node js  ",
+      "contact": {
+        "email": ""
+      },
+      "version": "1.0.0"
+     
+    },
+    "basePath": "/",
+    
+    "schemes": [
+      "http",
+      "https"
+    ],
+    "consumes": [
+      "application/x-www-form-urlencoded"
+     
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "paths": {
+     "/create-task": {
+        "post": {
+          "deprecated": false,
+          "tags": [
+            "Task"
+          ],
+          "description": "create task ",
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "taskName",
+              "in": "formData",
+              "description": "please enter task name",
+              "required": true,
+              "type": "string"
+          },
+          {
+            "name": "description",
+            "in": "formData",
+            "description": "please enter description",
+            "required": true,
+            "type": "string"
+        }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successfully"
+            },
+            "401": {
+              "description": "Unauthorized"
+            }
+          },
+           "security": [
+            {
+              "basicAuth": [
+                "Username: ",
+                "Password: "
+              ]
+            }
+          ]
+        }
+    },
+      "/get-tasks": {
+        "get": {
+          "deprecated": false,
+          "tags": [
+            "Task"
+          ],
+          "description": "get all Tasks",
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+           
+          
+          ],
+          "responses": {
+            "200": {
+              "description": "Successfully"
+            },
+            "401": {
+              "description": "Unauthorized"
+            }
+          },
+           "security": [
+            {
+              "basicAuth": [
+                "Username: ",
+                "Password: "
+              ]
+            }
+          ]
+        }
+    },
+    "/get-task-byId": {
+        "get": {
+          "deprecated": false,
+          "tags": [
+            "Task"
+          ],
+          "description": "get all Tasks",
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+                "name": "taskId",
+                "in": "query",
+                "description": "please enter taskId",
+                "required": true,
+                "type": "string"
+            }            
+          
+          ],
+          "responses": {
+            "200": {
+              "description": "Successfully"
+            },
+            "401": {
+              "description": "Unauthorized"
+            }
+          },
+           "security": [
+            {
+              "basicAuth": [
+                "Username: ",
+                "Password: "
+              ]
+            }
+          ]
+        }
+    },
+    "/edit-task": {
+        "put": {
+          "deprecated": false,
+          "tags": [
+            "Task"
+          ],
+          "description": "update by task",
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+                "name": "taskId",
+                "in": "formData",
+                "description": "please enter taskId",
+                "required": true,
+                "type": "string"
+            },
+            {
+                "name": "taskName",
+                "in": "formData",
+                "description": "please enter task name",
+                "required": true,
+                "type": "string"
+            },
+            {
+              "name": "description",
+              "in": "formData",
+              "description": "please enter description",
+              "required": true,
+              "type": "string"
+          }
+
+          
+          ],
+          "responses": {
+            "200": {
+              "description": "Successfully"
+            },
+            "401": {
+              "description": "Unauthorized"
+            }
+          },
+           "security": [
+            {
+              "basicAuth": [
+                "Username: ",
+                "Password: "
+              ]
+            }
+          ]
+        }
+    },
+    "/delete-task": {
+        "delete": {
+          "deprecated": false,
+          "tags": [
+            "Task"
+          ],
+          "description": "delete task by Id",
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+                "name": "taskId",
+                "in": "formData",
+                "description": "please enter taskId",
+                "required": true,
+                "type": "string"
+            }            
+          
+          ],
+          "responses": {
+            "200": {
+              "description": "Successfully"
+            },
+            "401": {
+              "description": "Unauthorized"
+            }
+          },
+           "security": [
+            {
+              "basicAuth": [
+                "Username: ",
+                "Password: "
+              ]
+            }
+          ]
+        }
+    }
+  },
+    "securityDefinitions": {
+      "basicAuth": {
+        "type": "basic"
+      }
+    }
+  }
+  
